@@ -38,7 +38,7 @@ const Portfolio = () => {
         "Role-based access system with JWT authentication, CRUD workflows, and responsive design.",
       image:
         "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop",
-      video:"https://youtu.be/Wm1xGI53xD8", // demo hosted video
+      video: "https://private-user-images.githubusercontent.com/134439319/486814757-56dc5869-7188-41b8-bb6a-bb72144c869f.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTc1MDkzNTEsIm5iZiI6MTc1NzUwOTA1MSwicGF0aCI6Ii8xMzQ0MzkzMTkvNDg2ODE0NzU3LTU2ZGM1ODY5LTcxODgtNDFiOC1iYjZhLWJiNzIxNDRjODY5Zi5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDkxMFQxMjU3MzFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hZTJiZTVlZTVhYjQ2YmVhZDhlMDI0NDRiZmJlZDJjMDFkYTNlZGRlNjkxZDU0Njk1MmQwMjA4OGE5YmY4ZDc4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.TCJyDnoiK0GEXYlIHW42aCMuI0VetLyIvkup43vmxw8", // demo hosted video
  
       presentation: "https://www.linkedin.com/in/paulina-wambua-2b11a4261/details/projects/692783978/multiple-media-viewer?profileId=ACoAAEBHIqUBGV_rUq8ejXAL8C8zNQ_ktgn1F_0&treasuryMediaId=1757340691266&type=DOCUMENT&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BGRj3RzpCSXCXzcD1Cm8hiQ%3D%3D",
     },
