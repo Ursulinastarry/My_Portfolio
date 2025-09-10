@@ -14,10 +14,13 @@ import {
   Code,
   Brain,
   Database,
+  Menu,
+  X,
 } from "lucide-react";
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // ---------------- READ-ONLY DATA ----------------
   const projects = [
@@ -28,19 +31,19 @@ const Portfolio = () => {
         "Regional salon booking platform with AI chat interface to guide users. Features authentication, real-time conflict checks, and M-Pesa payments.",
       image:
         "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=300&fit=crop",
-      video: "/videos/fahari.mp4", // demo hosted video
+      video: "/videos/fahari.mp4",
       presentation: "",
     },
-     {
+    {
       id: 2,
       title: "Digital Library Management",
       description:
         "Role-based access system with JWT authentication, CRUD workflows, and responsive design.",
       image:
         "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop",
-      video: "/videos/library.mp4", // demo hosted video
- 
-      presentation: "https://www.linkedin.com/in/paulina-wambua-2b11a4261/details/projects/692783978/multiple-media-viewer?profileId=ACoAAEBHIqUBGV_rUq8ejXAL8C8zNQ_ktgn1F_0&treasuryMediaId=1757340691266&type=DOCUMENT&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BGRj3RzpCSXCXzcD1Cm8hiQ%3D%3D",
+      video: "/videos/library.mp4",
+      presentation:
+        "https://www.linkedin.com/in/paulina-wambua-2b11a4261/details/projects/692783978/multiple-media-viewer?profileId=ACoAAEBHIqUBGV_rUq8ejXAL8C8zNQ_ktgn1F_0&treasuryMediaId=1757340691266&type=DOCUMENT&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BGRj3RzpCSXCXzcD1Cm8hiQ%3D%3D",
     },
     {
       id: 3,
@@ -50,10 +53,10 @@ const Portfolio = () => {
       image:
         "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
       liveLink: "https://skillmatch-mu.vercel.app/",
-      
-      presentation: "https://www.linkedin.com/in/paulina-wambua-2b11a4261/details/projects/699826018/multiple-media-viewer?profileId=ACoAAEBHIqUBGV_rUq8ejXAL8C8zNQ_ktgn1F_0&treasuryMediaId=1757341450635&type=DOCUMENT&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BGRj3RzpCSXCXzcD1Cm8hiQ%3D%3D",
+      video: "/videos/skillmatch.mp4",
+      presentation:
+        "https://www.linkedin.com/in/paulina-wambua-2b11a4261/details/projects/699826018/multiple-media-viewer?profileId=ACoAAEBHIqUBGV_rUq8ejXAL8C8zNQ_ktgn1F_0&treasuryMediaId=1757341450635&type=DOCUMENT&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BGRj3RzpCSXCXzcD1Cm8hiQ%3D%3D",
     },
-   
   ];
 
   const certifications = [
@@ -106,7 +109,16 @@ const Portfolio = () => {
       date: "2025",
       description: "Advanced English language proficiency certification",
     },
-    
+  ];
+
+  const tabs = [
+    { id: "home", label: "Home", icon: Home },
+    { id: "about", label: "About", icon: User },
+    { id: "resume", label: "Resume", icon: Resume },
+    { id: "services", label: "Services", icon: Briefcase },
+    { id: "projects", label: "Projects", icon: FileText },
+    { id: "certifications", label: "Certifications", icon: Award },
+    { id: "contact", label: "Contact", icon: Mail },
   ];
 
   // ---------------- COMPONENT ----------------
@@ -116,16 +128,10 @@ const Portfolio = () => {
       <header className="bg-white shadow-sm sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-gray-900">Paulina Wambua</h1>
-          <nav className="flex space-x-2">
-            {[
-              { id: "home", label: "Home", icon: Home },
-              { id: "about", label: "About", icon: User },
-              { id: "resume", label: "Resume", icon: Resume },
-              { id: "services", label: "Services", icon: Briefcase },
-              { id: "projects", label: "Projects", icon: FileText },
-              { id: "certifications", label: "Certifications", icon: Award },
-              { id: "contact", label: "Contact", icon: Mail },
-            ].map(({ id, label, icon: Icon }) => (
+
+          {/* Desktop Nav */}
+          <nav className="hidden sm:flex space-x-2">
+            {tabs.map(({ id, label, icon: Icon }) => (
               <button
                 key={id}
                 onClick={() => setActiveTab(id)}
@@ -139,7 +145,38 @@ const Portfolio = () => {
               </button>
             ))}
           </nav>
+
+          {/* Mobile Hamburger */}
+          <button
+            className="sm:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+
+        {/* Mobile Dropdown */}
+        {menuOpen && (
+          <div className="sm:hidden bg-gray-50 border-t border-gray-200">
+            {tabs.map(({ id, label, icon: Icon }) => (
+              <button
+                key={id}
+                onClick={() => {
+                  setActiveTab(id);
+                  setMenuOpen(false);
+                }}
+                className={`w-full flex items-center gap-3 px-4 py-3 text-left ${
+                  activeTab === id
+                    ? "bg-indigo-100 text-indigo-600"
+                    : "text-gray-700 hover:bg-gray-100"
+                }`}
+              >
+                <Icon size={18} />
+                {label}
+              </button>
+            ))}
+          </div>
+        )}
       </header>
 
       {/* Main */}
@@ -190,14 +227,13 @@ const Portfolio = () => {
                 <div className="flex items-center gap-2">
                   <MapPin size={16} /> Remote • Flexible across EMEA & US time zones || on-site • Nairobi, Kenya
                 </div>
-              
               </div>
               <br />
-            <img
-              src="https://avatars.githubusercontent.com/u/134439319?v=4"
-              alt="About"
-              className="rounded-lg shadow-lg"
-            />
+              <img
+                src="https://avatars.githubusercontent.com/u/134439319?v=4"
+                alt="About"
+                className="rounded-lg shadow-lg"
+              />
             </div>
             <div className="space-y-6">
               <p className="text-gray-600 leading-relaxed">
@@ -205,24 +241,23 @@ const Portfolio = () => {
                 enterprise systems and exceptional user experiences.
               </p>
               <div>
-                 <h3 className="text-xl font-bold mb-4">Skills</h3>
-              <div className="border-l-2 border-indigo-500 pl-4 mb-6">
-                <h4 className="font-semibold">Frontend</h4>
-                <ul className="text-gray-600 mt-2 list-disc ml-5 text-sm">
-                  <li>React(JS and Typescript)</li>
-                  <li>Angular(Typescript)</li>
-                  <li>HTML, CSS, Tailwind</li>
-                </ul>
-              </div>
-              <div className="border-l-2 border-indigo-500 pl-4 mb-6">
-                <h4 className="font-semibold">Backend</h4>
-                <ul className="text-gray-600 mt-2 list-disc ml-5 text-sm">
-                  <li>Node.js</li>
-                  <li>Express(Typescript)</li>
-                  <li>PostgreSQL and Prisma</li>
-                </ul>
-              </div>
-              
+                <h3 className="text-xl font-bold mb-4">Skills</h3>
+                <div className="border-l-2 border-indigo-500 pl-4 mb-6">
+                  <h4 className="font-semibold">Frontend</h4>
+                  <ul className="text-gray-600 mt-2 list-disc ml-5 text-sm">
+                    <li>React(JS and Typescript)</li>
+                    <li>Angular(Typescript)</li>
+                    <li>HTML, CSS, Tailwind</li>
+                  </ul>
+                </div>
+                <div className="border-l-2 border-indigo-500 pl-4 mb-6">
+                  <h4 className="font-semibold">Backend</h4>
+                  <ul className="text-gray-600 mt-2 list-disc ml-5 text-sm">
+                    <li>Node.js</li>
+                    <li>Express(Typescript)</li>
+                    <li>PostgreSQL and Prisma</li>
+                  </ul>
+                </div>
               </div>
               <div className="border-l-2 border-indigo-500 pl-4 mb-6">
                 <h4 className="font-semibold">Deployment</h4>
@@ -230,7 +265,6 @@ const Portfolio = () => {
                   <li>Docker</li>
                   <li>AWS (EC2, S3)</li>
                   <li>Azure</li>
-
                   <li>CI/CD (GitHub Actions)</li>
                 </ul>
               </div>
@@ -244,7 +278,6 @@ const Portfolio = () => {
                   <li>Jira</li>
                 </ul>
               </div>
-              
             </div>
           </div>
         )}
@@ -276,16 +309,15 @@ const Portfolio = () => {
             <div>
               <div>
                 <h3 className="text-xl font-bold mb-4">Education</h3>
-              <div className="border-l-2 border-indigo-500 pl-4 mb-6">
-                <h4 className="font-semibold">BSC Computer Science - Dedan Kimathi University of Technology</h4>
-                <p className="text-indigo-600">Expected graduation: April 2026</p>
-                <ul className="text-gray-600 mt-2 list-disc ml-5 text-sm">
-                  <li> Contributed to numerous projects as part of my coursework.</li>
-                  <li> Coursework: Data Structures & Algorithms, Software Engineering, Databases, Networks 
-</li>
-                  <li> Activities: Member, Stunners Hockey Team </li>
-                </ul>
-              </div>
+                <div className="border-l-2 border-indigo-500 pl-4 mb-6">
+                  <h4 className="font-semibold">BSC Computer Science - Dedan Kimathi University of Technology</h4>
+                  <p className="text-indigo-600">Expected graduation: April 2026</p>
+                  <ul className="text-gray-600 mt-2 list-disc ml-5 text-sm">
+                    <li> Contributed to numerous projects as part of my coursework.</li>
+                    <li> Coursework: Data Structures & Algorithms, Software Engineering, Databases, Networks </li>
+                    <li> Activities: Member, Stunners Hockey Team </li>
+                  </ul>
+                </div>
               </div>
               <h3 className="text-xl font-bold mb-4">Languages</h3>
               <div className="space-y-3">
@@ -315,18 +347,18 @@ const Portfolio = () => {
                 </div>
               </div>
             </div>
-             {/* View Resume Button */}
-    <div className="text-center mt-8">
-      <a
-        href="/Paulina_Wambua_Resume.pdf"   // place PDF in /public
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors shadow-lg"
-      >
-        <FileText size={20} />
-        View Full Resume (PDF)
-      </a>
-    </div>
+            {/* View Resume Button */}
+            <div className="text-center mt-8">
+              <a
+                href="/Paulina_Wambua_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors shadow-lg"
+              >
+                <FileText size={20} />
+                View Full Resume (PDF)
+              </a>
+            </div>
           </div>
         )}
 
