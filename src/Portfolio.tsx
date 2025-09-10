@@ -315,6 +315,18 @@ const Portfolio = () => {
                 </div>
               </div>
             </div>
+             {/* View Resume Button */}
+    <div className="text-center mt-8">
+      <a
+        href="/Paulina_Wambua_Resume.pdf"   // place PDF in /public
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors shadow-lg"
+      >
+        <FileText size={20} />
+        View Full Resume (PDF)
+      </a>
+    </div>
           </div>
         )}
 
