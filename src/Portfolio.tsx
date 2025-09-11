@@ -428,7 +428,7 @@ const Portfolio = () => {
                     href={p.presentation}
                     className="block mt-2 text-green-600 hover:underline"
                   >
-                    📑 Download PPTX
+                    📑 View Presentation
                   </a>
                 )}
               </div>
