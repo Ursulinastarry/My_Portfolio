@@ -31,7 +31,7 @@ const Portfolio = () => {
         "Regional salon booking platform with AI chat interface to guide users. Features authentication, real-time conflict checks, and M-Pesa payments.",
       image:
         "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=300&fit=crop",
-      video: "/videos/fahari.mp4",
+      liveLink: "https://www.faharibeauty.com",
       presentation: "",
     },
     {
