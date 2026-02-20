@@ -21,6 +21,8 @@ import {
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [sending, setSending] = useState(false);
 
   // ---------------- READ-ONLY DATA ----------------
   const projects = [
