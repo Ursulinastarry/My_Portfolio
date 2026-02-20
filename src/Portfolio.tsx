@@ -459,7 +459,7 @@ const Portfolio = () => {
         {/* CONTACT */}
         {activeTab === "contact" && (
           <div className="grid md:grid-cols-2 gap-8">
-            <form className="bg-white p-6 rounded-lg shadow space-y-4">
+            {/* <form className="bg-white p-6 rounded-lg shadow space-y-4">
               <input
                 type="text"
                 placeholder="Your Name"
@@ -478,7 +478,7 @@ const Portfolio = () => {
               <button className="bg-indigo-600 text-white px-4 py-2 rounded">
                 Send
               </button>
-            </form>
+            </form> */}
             <div className="space-y-4">
               <a
                 href="mailto:paulinawambua8@gmail.com"
