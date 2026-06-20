@@ -216,11 +216,9 @@ const Portfolio = () => {
               className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
             />
             <h2 className="text-4xl font-bold mb-2">Paulina Wambua</h2>
-            <p className="text-indigo-600 text-lg">Full-Stack Software Engineer</p>
+            <p className="text-indigo-600 text-lg">Computer Science Graduate</p>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-              Dynamic engineer with expertise in AI-driven solutions and scalable
-              applications. Experienced in modern frameworks, cloud services,
-              and agile practices.
+              Computer Science graduate with practical experience in software engineering, quality assurance, database management, cloud technologies, AI integration, and network support. Skilled in building full-stack applications, developing APIs, implementing automated testing, and collaborating in Agile teams. Seeking opportunities in software development, cloud engineering, networking, systems administration, QA, technical support, and graduate trainee programs.
             </p>
             <div className="grid md:grid-cols-3 gap-6 mt-12">
               <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -263,8 +261,7 @@ const Portfolio = () => {
             </div>
             <div className="space-y-6">
               <p className="text-gray-600 leading-relaxed">
-                Full-Stack Software Engineer passionate about innovation in
-                enterprise systems and exceptional user experiences.
+                Computer Science graduate with practical experience in software engineering, quality assurance, database management, cloud technologies, AI integration, and network support. Skilled in building full-stack applications, developing APIs, implementing automated testing, and collaborating in Agile teams. Seeking opportunities in software development, cloud engineering, networking, systems administration, QA, technical support, and graduate trainee programs.
               </p>
               <div>
                 <h3 className="text-xl font-bold mb-4">Skills</h3>
@@ -385,7 +382,7 @@ const Portfolio = () => {
             {/* View Resume Button */}
             <div className="text-center mt-8">
               <a
-                href="/Paulina_Wambua_Resume.pdf"
+                href="/Paulina_Wambua_Template_Style_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors shadow-lg"
