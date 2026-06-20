@@ -33,8 +33,9 @@ const Portfolio = () => {
         "Regional salon booking platform with AI chat interface to guide users. Features authentication, real-time conflict checks, and M-Pesa payments.",
       image:
         "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=300&fit=crop",
+      video: "/videos/fahari.mp4", 
       liveLink: "https://www.faharibeauty.com",
-      presentation: "",
+      presentation: "https://drive.google.com/file/d/1JEymJsSIny8AQF9J392jUvHk9h83x1SI/view?usp=sharing",
     },
     {
       id: 2,
@@ -59,7 +60,15 @@ const Portfolio = () => {
       presentation:
         "https://www.linkedin.com/in/paulina-wambua-2b11a4261/details/projects/699826018/multiple-media-viewer?profileId=ACoAAEBHIqUBGV_rUq8ejXAL8C8zNQ_ktgn1F_0&treasuryMediaId=1757341450635&type=DOCUMENT&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BGRj3RzpCSXCXzcD1Cm8hiQ%3D%3D",
     },
-  ];
+    {
+      id: 4,
+      title: "Ming'aro Africa Limited",
+      description:
+        "E-commerce platform for clothes,shoes,bags,furniture and stylist concierge services.",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7eA_Duw5a290U_PE-Vij__HkADxF5si85I6MGbF6yPw&s=10",
+      liveLink: "https://mingaroafrica.com/",
+      },  ];
 
   const certifications = [
     {
@@ -110,6 +119,13 @@ const Portfolio = () => {
       issuer: "EF SET",
       date: "2025",
       description: "Advanced English language proficiency certification",
+    },
+     {
+      id: 8,
+      title: "Microsoft Certified: Azure AI Fundamentals",
+      issuer: "Microsoft Elevate",
+      date: "2025",
+      description: "Training in Azure AI services and fundamentals, including Azure Cognitive Services and Azure Machine Learning.",
     },
   ];
 
@@ -290,6 +306,15 @@ const Portfolio = () => {
             <div>
               <h3 className="text-xl font-bold mb-4">Experience</h3>
               <div className="border-l-2 border-indigo-500 pl-4 mb-6">
+                <h4 className="font-semibold">Python Developer Intern</h4>
+                <p className="text-indigo-600">Teach2Give • Feb–March 2026</p>
+                <ul className="text-gray-600 mt-2 list-disc ml-5 text-sm">
+                  <li>Learnt basic Python coding</li>
+                  <li>Performed web scraping and data analysis</li>
+                  <li>Backend development with Python and Django</li>
+                </ul>
+              </div>
+              <div className="border-l-2 border-indigo-500 pl-4 mb-6">
                 <h4 className="font-semibold">Software Engineer Intern</h4>
                 <p className="text-indigo-600">Teach2Give • Feb–Apr 2025</p>
                 <ul className="text-gray-600 mt-2 list-disc ml-5 text-sm">
@@ -313,7 +338,7 @@ const Portfolio = () => {
                 <h3 className="text-xl font-bold mb-4">Education</h3>
                 <div className="border-l-2 border-indigo-500 pl-4 mb-6">
                   <h4 className="font-semibold">BSC Computer Science - Dedan Kimathi University of Technology</h4>
-                  <p className="text-indigo-600">Expected graduation: April 2026</p>
+                  <p className="text-indigo-600">Graduated in June 2026</p>
                   <ul className="text-gray-600 mt-2 list-disc ml-5 text-sm">
                     <li> Contributed to numerous projects as part of my coursework.</li>
                     <li> Coursework: Data Structures & Algorithms, Software Engineering, Databases, Networks </li>
