@@ -117,7 +117,7 @@ const Portfolio = () => {
       issuer: "Alliance Francaise",
       date: "2025",
       description: "Intermediate French language proficiency certification",
-      credential: "https://media.licdn.com/dms/image/v2/D4D2DAQEBTWae_iNiSw/profile-treasury-image-shrink_160_160/B4DZbPa1ZBG0Ao-/0/1747236646173?e=1782576000&v=beta&t=Q1OdgdMufU6DyrvSnrWlCwhwriki_GcLVQd13omGOYY",
+      credential: "https://drive.google.com/file/d/1OYB0LzqpgVg60tt5Cxa5jgoKQiabgrNS/view?usp=sharing",
     },
     {
       id: 7,
