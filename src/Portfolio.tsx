@@ -77,6 +77,7 @@ const Portfolio = () => {
       issuer: "Microsoft Americas Azure Team",
       date: "2025",
       description: "Advanced JavaScript + AI integration skills recognition",
+      credential: "https://www.credly.com/badges/bf4221cc-325a-43a7-8cb8-d8540522afd9/public_url",
     },
     {
       id: 2,
@@ -84,6 +85,7 @@ const Portfolio = () => {
       issuer: "Microsoft & LinkedIn",
       date: "2025",
       description: "Comprehensive software development fundamentals",
+      credential: "https://www.linkedin.com/learning/certificates/a1390232ab9eda408ba0a62b9a6747dd62bc87bde1135c62bda39343d14f28d6",
     },
     {
       id: 3,
@@ -91,6 +93,7 @@ const Portfolio = () => {
       issuer: "Google (Coursera)",
       date: "2025",
       description: "Advanced agile methodologies and project management",
+      credential: "https://www.coursera.org/account/accomplishments/verify/0IDVMZLPWF9L",
     },
     {
       id: 4,
@@ -98,13 +101,15 @@ const Portfolio = () => {
       issuer: "Teach2Give",
       date: "2025",
       description: "Advanced software engineering and quality assurance practices",
+      credential: "https://drive.google.com/file/d/197YUmk3y9QNOwnynYH1oU2Vcvgqzkvq6/view?usp=sharing",
     },
     {
       id: 5,
       title: "Frontend Web Development",
       issuer: "Alison",
       date: "2023",
-      description: "Fundamentals of frontend web development",
+      description: "Web development with HTML and CSS for beginners.",
+      credential: "https://alison.com/verify/2ebf6c80de",
     },
     {
       id: 6,
@@ -112,6 +117,7 @@ const Portfolio = () => {
       issuer: "Alliance Francaise",
       date: "2025",
       description: "Intermediate French language proficiency certification",
+      credential: "https://media.licdn.com/dms/image/v2/D4D2DAQEBTWae_iNiSw/profile-treasury-image-shrink_160_160/B4DZbPa1ZBG0Ao-/0/1747236646173?e=1782576000&v=beta&t=Q1OdgdMufU6DyrvSnrWlCwhwriki_GcLVQd13omGOYY",
     },
     {
       id: 7,
@@ -119,6 +125,7 @@ const Portfolio = () => {
       issuer: "EF SET",
       date: "2025",
       description: "Advanced English language proficiency certification",
+      credential: "https://cert.efset.org/A8xrK1",
     },
      {
       id: 8,
@@ -126,6 +133,7 @@ const Portfolio = () => {
       issuer: "Microsoft Elevate",
       date: "2025",
       description: "Training in Azure AI services and fundamentals, including Azure Cognitive Services and Azure Machine Learning.",
+      credential: "https://learn.microsoft.com/api/credentials/share/en-us/PaulinaWambua-2578/F30A94EC501E9423?sharingId",
     },
   ];
 
@@ -476,6 +484,16 @@ const Portfolio = () => {
                   {c.issuer} • {c.date}
                 </p>
                 <p className="text-gray-600 text-sm mt-2">{c.description}</p>
+                {c.credential && (
+                  <a
+                    href={c.credential}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mt-2 text-green-600 hover:underline"
+                  >
+                    🔗 Show Credential
+                  </a>
+                )}
               </div>
             ))}
           </div>
